@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
+          className={`md:hidden transition-colors ${scrolled ? "text-foreground" : "text-hanji"}`}
           aria-label="메뉴"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
