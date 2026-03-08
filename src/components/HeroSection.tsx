@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import hangulCalligraphy from "@/assets/hangul-calligraphy.png";
 
 const HeroSection = () => {
   return (
@@ -10,15 +11,15 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Large decorative Hangul */}
-      <motion.div
+      {/* Calligraphy image */}
+      <motion.img
+        src={hangulCalligraphy}
+        alt="한글 서예 - 한"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.04, scale: 1 }}
+        animate={{ opacity: 0.12, scale: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute text-[40vw] font-black text-ink leading-none select-none pointer-events-none"
-      >
-        한
-      </motion.div>
+        className="absolute w-[50vw] max-w-[500px] select-none pointer-events-none"
+      />
 
       <div className="relative z-10 text-center px-6">
         {/* Small label */}
