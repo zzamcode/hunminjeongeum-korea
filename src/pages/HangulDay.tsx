@@ -213,15 +213,29 @@ const HangulDay = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl font-light text-foreground leading-relaxed italic"
+            className="text-lg md:text-xl font-light text-foreground leading-[1.9] italic"
           >
-            "한글은 세계에서 가장 훌륭한 알파벳이며,
+            "슬기로운 사람은 아침나절이 되기 전에 이를 깨우치고,
             <br className="hidden md:block" />
-            가장 과학적인 표기 체계이다."
+            어리석은 사람이라도 열흘이면 배울 수 있다.
+            <br className="hidden md:block" />
+            이 28자를 가지고 천하의 만물을 적을 수 있으니,
+            <br className="hidden md:block" />
+            비록 바람 소리, 학의 울음, 닭의 홰치는 소리,
+            <br className="hidden md:block" />
+            개 짖는 소리일지라도 모두 적을 수 있느니라."
           </motion.blockquote>
-          <p className="text-sm text-muted-foreground mt-6">
-            — 제프리 샘슨, 영국 언어학자
-          </p>
+          <div className="flex items-center justify-center gap-3 mt-8">
+            <img
+              src="/images/sejong.jpg"
+              alt="세종대왕"
+              className="w-10 h-10 rounded-full object-cover border border-border"
+            />
+            <div className="text-left">
+              <p className="text-sm font-bold text-foreground">세종대왕</p>
+              <p className="text-xs text-muted-foreground">훈민정음 어제서문</p>
+            </div>
+          </div>
         </div>
       </section>
 
