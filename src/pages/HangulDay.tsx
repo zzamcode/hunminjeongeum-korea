@@ -164,7 +164,7 @@ const HangulDay = () => {
 
       {/* Global Reach */}
       <section className="py-20 px-6 bg-card">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -174,23 +174,31 @@ const HangulDay = () => {
             세계 속의 한글
           </motion.h2>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {globalReach.map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
                 onClick={() => setSelectedGlobal(item)}
-                className="flex gap-6 items-start cursor-pointer group"
+                className="bg-background rounded-sm border border-border overflow-hidden cursor-pointer group hover:shadow-md transition-shadow"
               >
-                <div className="w-1 h-full min-h-[4rem] bg-vermillion rounded-full flex-shrink-0" />
-                <div>
-                  <h3 className="font-bold text-foreground group-hover:text-vermillion transition-colors">{item.title}</h3>
+                <div className="h-44 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="font-bold text-foreground group-hover:text-vermillion transition-colors">{item.title}</h3>
+                  </div>
                   <span className="text-xs text-vermillion tracking-widest">{item.location}</span>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
-                  <span className="text-xs text-muted-foreground group-hover:text-vermillion mt-2 inline-block transition-colors">자세히 보기 →</span>
+                  <span className="text-xs text-muted-foreground group-hover:text-vermillion mt-3 inline-block transition-colors">자세히 보기 →</span>
                 </div>
               </motion.div>
             ))}
