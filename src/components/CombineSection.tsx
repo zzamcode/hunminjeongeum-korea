@@ -25,7 +25,7 @@ const buttonVariants = {
     transition: {
       duration: 0.3,
       delay: i * 0.02,
-      type: "spring",
+      type: "spring" as const,
       stiffness: 250,
       damping: 18,
     },
