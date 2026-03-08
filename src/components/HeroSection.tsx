@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 
 const HeroSection = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isKo = locale === "ko";
+  const isCJK = locale === "ko" || locale === "ja" || locale === "zh";
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden hanji-texture">
@@ -41,7 +43,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-black text-ink mb-6 tracking-tight"
+          className={`font-black text-ink mb-6 tracking-tight ${
+            isCJK
+              ? "text-6xl md:text-8xl lg:text-9xl"
+              : "text-4xl md:text-5xl lg:text-7xl"
+          }`}
         >
           {t("hero.title")}
         </motion.h1>
