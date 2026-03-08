@@ -14,7 +14,7 @@ const moreItems = [
   { label: "포스터 갤러리", path: "/posters" },
   { label: "한글의 역사", path: "/history" },
   { label: "한글날", path: "/hangulday" },
-  { label: "명언 컬렉션", path: "/quotes" },
+  { label: "한글을 빛낸 말들", path: "/quotes" },
 ];
 
 const Navbar = () => {
