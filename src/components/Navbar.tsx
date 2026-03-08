@@ -11,11 +11,11 @@ const navItems = [
 ];
 
 const moreItems = [
-  { label: "한글 글자 마당", path: "/posters" },
-  { label: "한글의 역사", path: "/history" },
-  { label: "한글날", path: "/hangulday" },
-  { label: "한글을 빛낸 말들", path: "/quotes" },
-  { label: "한글 소식", path: "/news" },
+  { label: "한글 글자 마당", path: "/글자마당" },
+  { label: "한글의 역사", path: "/역사" },
+  { label: "한글날", path: "/한글날" },
+  { label: "한글을 빛낸 말들", path: "/명언" },
+  { label: "한글 소식", path: "/소식" },
 ];
 
 const Navbar = () => {
