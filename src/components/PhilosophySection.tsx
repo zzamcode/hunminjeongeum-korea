@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const PhilosophySection = () => {
   return (
-    <section className="py-32 px-6 bg-ink relative overflow-hidden">
+    <section id="philosophy" className="py-32 px-6 bg-ink relative overflow-hidden scroll-mt-16">
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
