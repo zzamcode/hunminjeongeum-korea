@@ -140,7 +140,7 @@ const globalData: Record<Locale, GlobalItem[]> = {
     { title: "齐亚齐亚族的韩文", location: "印度尼西亚布顿岛", desc: "2009年，一个没有文字的少数民族选择了韩文。", image: "/images/global-ciacia.png", detail: "布顿岛的齐亚齐亚族是约8万人的少数民族。韩文几乎能完美地表记他们语言的复杂发音。\n\n当地小学开始了韩文课程，并编写了韩文教科书。" },
     { title: "韩国语能力考试(TOPIK)", location: "全球87个国家", desc: "每年超过40万人参加韩语能力考试。", image: "/images/global-topik.png", detail: "TOPIK于1997年以约2,700名考生起步。25年后，年度考生人数已超过40万。\n\n大多数学习者几天内就能阅读韩文。" },
     { title: "世宗学堂", location: "全球82个国家234处", desc: "向世界传播韩语和韩文的公共教育机构。", image: "/images/global-sejong.png", detail: "2007年在蒙古首次开设的世宗学堂，现已扩展至82个国家234处。\n\n提供韩文书法、韩国料理、传统文化体验等丰富多彩的课程。" },
-    { title: "韩文与Unicode", location: "全球数字环境", desc: "11,172个音节系统排列——Unicode中最科学的文字块。", image: "/images/global-unicode.png", detail: "韩文在Unicode的"韩文音节"块中分配了11,172个完成型音节。\n\n580年前世宗设计的组合原理在数字时代依然完美运作。" },
+    { title: "韩文与Unicode", location: "全球数字环境", desc: "11,172个音节系统排列——Unicode中最科学的文字块。", image: "/images/global-unicode.png", detail: "韩文在Unicode的「韩文音节」块中分配了11,172个完成型音节。\n\n580年前世宗设计的组合原理在数字时代依然完美运作。" },
     { title: "海外大学的韩语系", location: "美国·欧洲·亚洲主要大学", desc: "哈佛、牛津、索邦等世界名校均设有韩语系。", image: "/images/global-university.jpg", detail: "目前仅在美国就有100多所大学开设韩语课程，韩语是美国大学中增长最快的外语课程之一。" },
     { title: "韩流与韩文的全球化", location: "全球190多个国家", desc: "K-POP、韩剧、韩国电影将韩文带入了世界人民的日常生活。", image: "/images/global-hallyu.png", detail: "为了跟唱BTS的歌词，全球数百万人开始学习韩文。\n\n韩文的设计之美也在时尚和艺术领域受到关注。" },
   ],
