@@ -38,6 +38,14 @@ const cards = [
     icon: "美",
     accent: "gold",
   },
+  {
+    titleKey: "cards.gpt.title",
+    descKey: "cards.gpt.desc",
+    path: "https://chatgpt.com/g/g-69ad4daef17c819198ab5a2c04c91803-hangeulyi-yeogsa",
+    icon: "智",
+    accent: "jade",
+    external: true,
+  },
 ];
 
 const ContentCards = () => {

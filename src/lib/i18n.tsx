@@ -509,6 +509,11 @@ const translations: Record<Locale, Translations> = {
     "cards.news.desc": "Cobertura mediática global del Hangul en CNN, NYT y más",
     "cards.posters.title": "Galería de Letras",
     "cards.posters.desc": "Experimenta la belleza de las letras Hangul a través de pósters",
+    "cards.gpt.title": "Chatea con IA sobre Hangul",
+    "cards.gpt.desc": "Haz preguntas y explora la historia del Hangul con ChatGPT",
+    "history.gpt.title": "Pregunta a la IA sobre la historia del Hangul",
+    "history.gpt.desc": "¿Tienes preguntas? Chatea con nuestro experto en historia del Hangul impulsado por ChatGPT.",
+    "history.gpt.button": "Chatear con IA",
 
     "footer.desc": "Un sitio web dedicado a compartir la belleza del Hangul",
     "footer.unesco": "Patrimonio de la Memoria del Mundo de la UNESCO · Inscrito en 1997",
