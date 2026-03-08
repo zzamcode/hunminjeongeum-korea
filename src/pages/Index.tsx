@@ -6,7 +6,6 @@ import CombineSection from "@/components/CombineSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import ContentCards from "@/components/ContentCards";
 import FooterSection from "@/components/FooterSection";
-import YouTubePlayer from "@/components/YouTubePlayer";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
       <PhilosophySection />
       <ContentCards />
       <FooterSection />
-      <YouTubePlayer />
     </main>
   );
 };
