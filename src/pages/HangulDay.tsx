@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
+import ResponsiveModal from "@/components/ResponsiveModal";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -193,47 +193,47 @@ const HangulDay = () => {
         </div>
       </section>
 
-      {/* Fact Detail Drawer */}
-      <Drawer open={!!selectedFact} onOpenChange={(open) => !open && setSelectedFact(null)}>
-        <DrawerContent className="max-h-[85vh] border-border bg-background">
-          <DrawerTitle className="sr-only">{selectedFact?.title}</DrawerTitle>
-          <DrawerDescription className="sr-only">{selectedFact?.title} 상세 정보</DrawerDescription>
-          {selectedFact && (
-            <div className="overflow-y-auto p-8 space-y-5">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl">{selectedFact.icon}</span>
-                <h3 className="text-xl font-bold text-foreground">{selectedFact.title}</h3>
-              </div>
-              <p className="text-sm text-foreground leading-relaxed">{selectedFact.detail.fullDesc}</p>
-              <div>
-                <h4 className="text-xs font-bold text-vermillion tracking-widest mb-2">역사</h4>
-                <p className="text-sm text-muted-foreground leading-[1.8]">{selectedFact.detail.history}</p>
-              </div>
-              <div className="bg-muted/50 rounded-sm p-4">
-                <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">✨ 의의</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{selectedFact.detail.significance}</p>
-              </div>
+      <ResponsiveModal
+        open={!!selectedFact}
+        onOpenChange={(open) => !open && setSelectedFact(null)}
+        title={selectedFact?.title || ""}
+        description={`${selectedFact?.title} 상세 정보`}
+      >
+        {selectedFact && (
+          <div className="overflow-y-auto p-8 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="text-4xl">{selectedFact.icon}</span>
+              <h3 className="text-xl font-bold text-foreground">{selectedFact.title}</h3>
             </div>
-          )}
-        </DrawerContent>
-      </Drawer>
+            <p className="text-sm text-foreground leading-relaxed">{selectedFact.detail.fullDesc}</p>
+            <div>
+              <h4 className="text-xs font-bold text-vermillion tracking-widest mb-2">역사</h4>
+              <p className="text-sm text-muted-foreground leading-[1.8]">{selectedFact.detail.history}</p>
+            </div>
+            <div className="bg-muted/50 rounded-sm p-4">
+              <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">✨ 의의</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{selectedFact.detail.significance}</p>
+            </div>
+          </div>
+        )}
+      </ResponsiveModal>
 
-      {/* Global Detail Drawer */}
-      <Drawer open={!!selectedGlobal} onOpenChange={(open) => !open && setSelectedGlobal(null)}>
-        <DrawerContent className="max-h-[85vh] border-border bg-background">
-          <DrawerTitle className="sr-only">{selectedGlobal?.title}</DrawerTitle>
-          <DrawerDescription className="sr-only">{selectedGlobal?.title} 상세 정보</DrawerDescription>
-          {selectedGlobal && (
-            <div className="overflow-y-auto p-8 space-y-5">
-              <div>
-                <h3 className="text-xl font-bold text-foreground">{selectedGlobal.title}</h3>
-                <span className="text-xs text-vermillion tracking-widest">{selectedGlobal.location}</span>
-              </div>
-              <p className="text-sm text-foreground/80 leading-[1.8]">{selectedGlobal.detail}</p>
+      <ResponsiveModal
+        open={!!selectedGlobal}
+        onOpenChange={(open) => !open && setSelectedGlobal(null)}
+        title={selectedGlobal?.title || ""}
+        description={`${selectedGlobal?.title} 상세 정보`}
+      >
+        {selectedGlobal && (
+          <div className="overflow-y-auto p-8 space-y-5">
+            <div>
+              <h3 className="text-xl font-bold text-foreground">{selectedGlobal.title}</h3>
+              <span className="text-xs text-vermillion tracking-widest">{selectedGlobal.location}</span>
             </div>
-          )}
-        </DrawerContent>
-      </Drawer>
+            <p className="text-sm text-foreground/80 leading-[1.8]">{selectedGlobal.detail}</p>
+          </div>
+        )}
+      </ResponsiveModal>
 
       <FooterSection />
     </main>

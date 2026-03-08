@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
+import ResponsiveModal from "@/components/ResponsiveModal";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -186,42 +186,42 @@ const Posters = () => {
         </div>
       </section>
 
-      {/* Detail Drawer */}
-      <Drawer open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DrawerContent className="max-h-[85vh] border-border bg-background">
-          <DrawerTitle className="sr-only">{selected?.name} 상세정보</DrawerTitle>
-          <DrawerDescription className="sr-only">{selected?.name}의 기원과 상세 정보</DrawerDescription>
-          {selected && (
-            <div className="overflow-y-auto">
-              <div className={`${selected.bg} ${selected.text} p-10 text-center`}>
-                <span className="text-8xl font-black">{selected.char}</span>
-                <div className="mt-3">
-                  <span className={`text-lg font-bold ${selected.accent}`}>{selected.name}</span>
-                </div>
-              </div>
-              <div className="p-8 space-y-6">
-                <div>
-                  <h4 className="text-sm font-bold text-vermillion tracking-widest mb-2">기원</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.origin}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-gold tracking-widest mb-2">파생 관계</h4>
-                  <p className="text-base font-bold text-foreground tracking-wider mb-1">{selected.detail.related}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.relatedDesc}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-jade tracking-widest mb-2">사용 예시</h4>
-                  <p className="text-sm text-foreground">{selected.detail.examples}</p>
-                </div>
-                <div className="bg-muted/50 rounded-sm p-4">
-                  <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">💡 알고 계셨나요?</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.funFact}</p>
-                </div>
+      <ResponsiveModal
+        open={!!selected}
+        onOpenChange={(open) => !open && setSelected(null)}
+        title={`${selected?.name} 상세정보`}
+        description={`${selected?.name}의 기원과 상세 정보`}
+      >
+        {selected && (
+          <div className="overflow-y-auto">
+            <div className={`${selected.bg} ${selected.text} p-10 text-center`}>
+              <span className="text-8xl font-black">{selected.char}</span>
+              <div className="mt-3">
+                <span className={`text-lg font-bold ${selected.accent}`}>{selected.name}</span>
               </div>
             </div>
-          )}
-        </DrawerContent>
-      </Drawer>
+            <div className="p-8 space-y-6">
+              <div>
+                <h4 className="text-sm font-bold text-vermillion tracking-widest mb-2">기원</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.origin}</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-gold tracking-widest mb-2">파생 관계</h4>
+                <p className="text-base font-bold text-foreground tracking-wider mb-1">{selected.detail.related}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.relatedDesc}</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-jade tracking-widest mb-2">사용 예시</h4>
+                <p className="text-sm text-foreground">{selected.detail.examples}</p>
+              </div>
+              <div className="bg-muted/50 rounded-sm p-4">
+                <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">💡 알고 계셨나요?</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.funFact}</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </ResponsiveModal>
 
       <FooterSection />
     </main>

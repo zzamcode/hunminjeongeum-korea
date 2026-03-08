@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
+import ResponsiveModal from "@/components/ResponsiveModal";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -154,57 +154,54 @@ const Quotes = () => {
         </div>
       </section>
 
-      {/* Detail Drawer */}
-      <Drawer open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DrawerContent className="max-h-[85vh] border-border bg-background">
-          <DrawerTitle className="sr-only">{selected?.author}의 명언</DrawerTitle>
-          <DrawerDescription className="sr-only">{selected?.author}의 명언 상세 정보</DrawerDescription>
-          {selected && (() => {
-            const accentText =
-              selected.accent === "vermillion"
-                ? "text-vermillion"
-                : selected.accent === "gold"
-                ? "text-gold"
-                : "text-jade";
-            const accentBorder =
-              selected.accent === "vermillion"
-                ? "border-vermillion"
-                : selected.accent === "gold"
-                ? "border-gold"
-                : "border-jade";
+      <ResponsiveModal
+        open={!!selected}
+        onOpenChange={(open) => !open && setSelected(null)}
+        title={`${selected?.author}의 명언`}
+        description={`${selected?.author}의 명언 상세 정보`}
+      >
+        {selected && (() => {
+          const accentText =
+            selected.accent === "vermillion"
+              ? "text-vermillion"
+              : selected.accent === "gold"
+              ? "text-gold"
+              : "text-jade";
+          const accentBorder =
+            selected.accent === "vermillion"
+              ? "border-vermillion"
+              : selected.accent === "gold"
+              ? "border-gold"
+              : "border-jade";
 
-            return (
-              <div className="overflow-y-auto p-8 space-y-6">
-                <div className={`border-l-4 ${accentBorder} pl-6`}>
-                  <p className="text-foreground leading-[1.9] text-base italic">
-                    "{selected.fullText}"
-                  </p>
+          return (
+            <div className="overflow-y-auto p-8 space-y-6">
+              <div className={`border-l-4 ${accentBorder} pl-6`}>
+                <p className="text-foreground leading-[1.9] text-base italic">
+                  "{selected.fullText}"
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg font-black ${accentText}`}>
+                  {selected.author[0]}
                 </div>
-
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg font-black ${accentText}`}>
-                    {selected.author[0]}
-                  </div>
-                  <div>
-                    <p className={`text-sm font-bold ${accentText}`}>{selected.author}</p>
-                    <p className="text-xs text-muted-foreground">{selected.source}</p>
-                  </div>
-                </div>
-
                 <div>
-                  <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">인물 소개</h4>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{selected.bio}</p>
-                </div>
-
-                <div className="bg-muted/50 rounded-sm p-4">
-                  <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">📖 배경</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.context}</p>
+                  <p className={`text-sm font-bold ${accentText}`}>{selected.author}</p>
+                  <p className="text-xs text-muted-foreground">{selected.source}</p>
                 </div>
               </div>
-            );
-          })()}
-        </DrawerContent>
-      </Drawer>
+              <div>
+                <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">인물 소개</h4>
+                <p className="text-sm text-foreground/80 leading-relaxed">{selected.bio}</p>
+              </div>
+              <div className="bg-muted/50 rounded-sm p-4">
+                <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">📖 배경</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{selected.context}</p>
+              </div>
+            </div>
+          );
+        })()}
+      </ResponsiveModal>
 
       <FooterSection />
     </main>
