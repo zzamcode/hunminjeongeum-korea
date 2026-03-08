@@ -153,7 +153,7 @@ const Posters = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-black text-foreground mb-4">
-              한글 포스터 갤러리
+              한글 글자 마당
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
               한글 자모의 아름다움을 타이포그래피 아트로 표현했습니다. 각 포스터를 클릭하면 상세 내용을 볼 수 있습니다.
