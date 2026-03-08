@@ -32,13 +32,13 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-ink/80 backdrop-blur-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className={`text-lg font-bold tracking-widest transition-colors ${scrolled ? "text-foreground" : "text-hanji"}`}
+          className="text-lg font-bold text-foreground tracking-widest"
         >
           훈민정음
         </button>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <li key={item.id}>
               <button
                 onClick={() => scrollTo(item.id)}
-                className={`text-sm tracking-widest hover:text-vermillion transition-colors ${scrolled ? "text-muted-foreground" : "text-hanji/70"}`}
+                className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
               >
                 {item.label}
               </button>
@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden transition-colors ${scrolled ? "text-foreground" : "text-hanji"}`}
+          className="md:hidden text-foreground"
           aria-label="메뉴"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}

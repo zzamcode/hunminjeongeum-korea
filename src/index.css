@@ -79,9 +79,6 @@
   .bg-hanji {
     background-color: hsl(var(--hanji));
   }
-  .text-hanji {
-    color: hsl(var(--hanji));
-  }
   .text-vermillion {
     color: hsl(var(--vermillion));
   }
