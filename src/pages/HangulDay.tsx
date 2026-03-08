@@ -185,11 +185,11 @@ const HangulDay = () => {
                 onClick={() => setSelectedGlobal(item)}
                 className="bg-background rounded-sm border border-border overflow-hidden cursor-pointer group hover:shadow-md transition-shadow"
               >
-                <div className="h-44 overflow-hidden">
+                <div className={`h-44 overflow-hidden ${item.image.includes('topik') || item.image.includes('unicode') ? 'bg-white flex items-center justify-center p-4' : ''}`}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${item.image.includes('topik') || item.image.includes('unicode') ? 'object-contain' : 'object-cover'}`}
                   />
                 </div>
                 <div className="p-6">
