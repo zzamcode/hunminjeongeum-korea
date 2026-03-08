@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['Noto Serif KR', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +50,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        ink: "hsl(var(--ink))",
+        hanji: "hsl(var(--hanji))",
+        vermillion: "hsl(var(--vermillion))",
+        gold: "hsl(var(--gold))",
+        jade: "hsl(var(--jade))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
