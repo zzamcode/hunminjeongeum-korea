@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
 
 const HeroSection = () => {
+  const { t } = useI18n();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden hanji-texture">
       {/* Decorative vertical lines */}
@@ -21,7 +24,6 @@ const HeroSection = () => {
       </motion.div>
 
       <div className="relative z-10 text-center px-6">
-        {/* Small label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,43 +32,38 @@ const HeroSection = () => {
         >
           <span className="w-8 h-px bg-vermillion" />
           <span className="text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            세종대왕 · 1443
+            {t("hero.label")}
           </span>
           <span className="w-8 h-px bg-vermillion" />
         </motion.div>
 
-        {/* Main title */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
           className="text-6xl md:text-8xl lg:text-9xl font-black text-ink mb-6 tracking-tight"
         >
-          훈민정음
+          {t("hero.title")}
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-lg md:text-xl text-muted-foreground font-light max-w-lg mx-auto mb-4 leading-relaxed"
         >
-          백성을 가르치는 바른 소리
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="text-sm text-muted-foreground/70 max-w-md mx-auto leading-relaxed"
+          className="text-sm text-muted-foreground/70 max-w-md mx-auto leading-relaxed whitespace-pre-line"
         >
-          한글은 세계에서 가장 과학적이고 아름다운 문자입니다.
-          <br />
-          그 창제의 원리와 아름다움을 탐구합니다.
+          {t("hero.desc")}
         </motion.p>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

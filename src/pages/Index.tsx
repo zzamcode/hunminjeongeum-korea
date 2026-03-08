@@ -4,6 +4,7 @@ import PrinciplesSection from "@/components/PrinciplesSection";
 import LettersShowcase from "@/components/LettersShowcase";
 import CombineSection from "@/components/CombineSection";
 import PhilosophySection from "@/components/PhilosophySection";
+import ContentCards from "@/components/ContentCards";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <LettersShowcase />
       <CombineSection />
       <PhilosophySection />
+      <ContentCards />
       <FooterSection />
     </main>
   );
