@@ -78,10 +78,18 @@ const events = [
 ];
 
 const History = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedSet, setExpandedSet] = useState<Set<number>>(new Set());
 
   const toggle = (i: number) => {
-    setExpandedIndex(expandedIndex === i ? null : i);
+    setExpandedSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) {
+        next.delete(i);
+      } else {
+        next.add(i);
+      }
+      return next;
+    });
   };
 
   return (
@@ -104,17 +112,19 @@ const History = () => {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border" />
+            {/* Vertical line */}
+            <div className="absolute left-[1.5rem] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-border" />
 
             {events.map((event, i) => {
               const isLeft = i % 2 === 0;
-              const isExpanded = expandedIndex === i;
+              const isExpanded = expandedSet.has(i);
               const accentColor =
                 event.accent === "vermillion"
-                  ? "text-vermillion border-vermillion"
+                  ? "text-vermillion border-vermillion bg-vermillion"
                   : event.accent === "gold"
-                  ? "text-gold border-gold"
-                  : "text-jade border-jade";
+                  ? "text-gold border-gold bg-gold"
+                  : "text-jade border-jade bg-jade";
+              const [textClass, borderClass, bgClass] = accentColor.split(" ");
 
               return (
                 <motion.div
@@ -127,9 +137,12 @@ const History = () => {
                     isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
                   } pl-14 md:pl-0`}
                 >
+                  {/* Timeline dot - precisely aligned to the vertical line */}
                   <div
-                    className={`absolute w-3 h-3 rounded-full border-2 ${accentColor} bg-background top-1 left-[1.19rem] md:left-auto ${
-                      isLeft ? "md:-right-[1.65rem]" : "md:-left-[1.65rem]"
+                    className={`absolute top-1 w-3 h-3 rounded-full border-2 ${borderClass} bg-background left-[0.9375rem] -translate-x-1/2 md:left-auto ${
+                      isLeft
+                        ? "md:right-0 md:translate-x-[calc(2rem+0.5px)] md:left-auto"
+                        : "md:left-0 md:-translate-x-[calc(2rem+0.5px)]"
                     }`}
                   />
 
@@ -137,7 +150,7 @@ const History = () => {
                     onClick={() => toggle(i)}
                     className="w-full text-left group"
                   >
-                    <span className={`text-sm font-bold ${accentColor.split(" ")[0]} tracking-widest`}>
+                    <span className={`text-sm font-bold ${textClass} tracking-widest`}>
                       {event.year}
                     </span>
                     <div className="flex items-center justify-between mt-1 mb-2">
