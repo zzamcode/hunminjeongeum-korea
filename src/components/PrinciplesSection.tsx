@@ -23,7 +23,7 @@ const principles = [
 
 const PrinciplesSection = () => {
   return (
-    <section className="py-32 px-6 bg-ink relative overflow-hidden">
+    <section id="principles" className="py-32 px-6 bg-ink relative overflow-hidden scroll-mt-16">
       {/* Background decorative character */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-black text-primary-foreground/[0.02] select-none pointer-events-none">
         음
