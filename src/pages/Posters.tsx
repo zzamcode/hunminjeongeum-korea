@@ -186,12 +186,13 @@ const Posters = () => {
         </div>
       </section>
 
-      {/* Detail Dialog */}
-      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
-        <DialogContent className="max-w-lg p-0 overflow-hidden border-border bg-background">
-          <DialogTitle className="sr-only">{selected?.name} 상세정보</DialogTitle>
+      {/* Detail Drawer */}
+      <Drawer open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
+        <DrawerContent className="max-h-[85vh] border-border bg-background">
+          <DrawerTitle className="sr-only">{selected?.name} 상세정보</DrawerTitle>
+          <DrawerDescription className="sr-only">{selected?.name}의 기원과 상세 정보</DrawerDescription>
           {selected && (
-            <>
+            <div className="overflow-y-auto">
               <div className={`${selected.bg} ${selected.text} p-10 text-center`}>
                 <span className="text-8xl font-black">{selected.char}</span>
                 <div className="mt-3">
@@ -217,10 +218,10 @@ const Posters = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">{selected.detail.funFact}</p>
                 </div>
               </div>
-            </>
+            </div>
           )}
-        </DialogContent>
-      </Dialog>
+        </DrawerContent>
+      </Drawer>
 
       <FooterSection />
     </main>
