@@ -519,6 +519,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "Activar música",
     "player.mute": "Desactivar música",
+    "player.toast": "🎵 Puede escuchar música de fondo en la esquina inferior derecha",
   },
 };
 
