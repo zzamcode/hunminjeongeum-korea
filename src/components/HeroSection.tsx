@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ink">
       {/* Background calligraphy image */}
       <div
-        className="absolute inset-0 bg-center bg-cover bg-no-repeat opacity-15"
+        className="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-25"
         style={{ backgroundImage: `url(${hangulCalligraphy})` }}
       />
 
