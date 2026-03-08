@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
