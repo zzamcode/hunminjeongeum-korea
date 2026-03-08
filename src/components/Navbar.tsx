@@ -50,14 +50,17 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border"
+          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
+      {/* 단청 top accent line */}
+      <div className="h-[3px] bg-gradient-to-r from-vermillion via-gold to-jade" />
+
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="text-lg font-bold text-foreground tracking-widest"
+          className="text-lg font-bold text-foreground tracking-widest ink-bleed-hover pb-1"
         >
           훈민정음.한국
         </Link>
@@ -70,7 +73,7 @@ const Navbar = () => {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollTo(item.id)}
-                    className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
+                    className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors ink-bleed-hover pb-1"
                   >
                     {item.label}
                   </button>
@@ -95,7 +98,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-3 bg-background/95 backdrop-blur-md border border-border rounded-sm shadow-lg min-w-[10rem] py-2"
+                    className="absolute right-0 top-full mt-3 bg-background/95 backdrop-blur-md border border-border rounded-sm shadow-lg min-w-[10rem] py-2 changho-card"
                   >
                     {moreItems.map((item) => (
                       <Link
@@ -148,7 +151,7 @@ const Navbar = () => {
                   </li>
                 ))}
 
-              <li className="w-16 h-px bg-border" />
+              <li className="w-16 h-px bg-vermillion/30" />
 
               {moreItems.map((item) => (
                 <li key={item.path}>
@@ -162,7 +165,7 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <li className="w-16 h-px bg-border" />
+              <li className="w-16 h-px bg-vermillion/30" />
 
               <li>
                 <LanguageSwitcher />

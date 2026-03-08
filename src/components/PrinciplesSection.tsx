@@ -26,8 +26,9 @@ const PrinciplesSection = () => {
   ];
 
   return (
-    <section id="principles" className="py-32 px-6 bg-ink relative overflow-hidden scroll-mt-16">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-black text-primary-foreground/[0.02] select-none pointer-events-none">
+    <section id="principles" className="py-32 px-6 sumuk-bg relative overflow-hidden scroll-mt-16">
+      {/* Ink wash decorative bg */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-black text-primary-foreground/[0.015] select-none pointer-events-none animate-sway">
         음
       </div>
 
@@ -39,10 +40,10 @@ const PrinciplesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="text-sm tracking-[0.3em] text-vermillion/80 uppercase block mb-4">
+          <span className="seal-stamp mb-6 inline-flex !text-primary-foreground !border-primary-foreground/40">
             {t("principles.label")}
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 mt-6">
             {t("principles.title")}
           </h2>
           <p className="text-primary-foreground/50 max-w-lg mx-auto">
@@ -58,9 +59,9 @@ const PrinciplesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group"
+              className="group corner-motif"
             >
-              <div className="border border-primary-foreground/10 p-8 h-full hover:border-vermillion/30 transition-colors duration-500">
+              <div className="border border-primary-foreground/10 p-8 h-full hover:border-vermillion/30 transition-colors duration-500 relative">
                 <div className="text-3xl md:text-4xl font-light text-vermillion/70 mb-6 tracking-widest">
                   {principle.symbol}
                 </div>
