@@ -33,7 +33,7 @@ const CombineSection = () => {
   const combined = composeSyllable(selectedCho, selectedJung, selectedJong);
 
   return (
-    <section className="py-32 px-6 bg-secondary">
+    <section id="combine" className="py-32 px-6 bg-secondary scroll-mt-16">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
