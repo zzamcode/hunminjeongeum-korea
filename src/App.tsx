@@ -21,11 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/posters" element={<Posters />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/hangulday" element={<HangulDay />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/quotes" element={<Quotes />} />
+          <Route path="/글자마당" element={<Posters />} />
+          <Route path="/역사" element={<History />} />
+          <Route path="/한글날" element={<HangulDay />} />
+          <Route path="/소식" element={<News />} />
+          <Route path="/명언" element={<Quotes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
