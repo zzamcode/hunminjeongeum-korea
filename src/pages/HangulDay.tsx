@@ -342,6 +342,13 @@ const HangulDay = () => {
       >
         {selectedGlobal && (
           <div className="overflow-y-auto p-8 space-y-5">
+            <div className="rounded-sm overflow-hidden -mx-8 -mt-8 mb-6">
+              <img
+                src={selectedGlobal.image}
+                alt={selectedGlobal.title}
+                className="w-full h-48 md:h-56 object-cover"
+              />
+            </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">{selectedGlobal.title}</h3>
               <span className="text-xs text-vermillion tracking-widest">{selectedGlobal.location}</span>
