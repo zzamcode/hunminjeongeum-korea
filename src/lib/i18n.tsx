@@ -301,6 +301,11 @@ const translations: Record<Locale, Translations> = {
     "cards.news.desc": "CNN、NYTなど世界が注目するハングルのニュース",
     "cards.posters.title": "文字ギャラリー",
     "cards.posters.desc": "ハングルの字母の美しさをポスターで鑑賞",
+    "cards.gpt.title": "AIとハングルの歴史を語ろう",
+    "cards.gpt.desc": "ChatGPTでハングルの歴史を自由に質問してみましょう",
+    "history.gpt.title": "AIにハングルの歴史を聞いてみよう",
+    "history.gpt.desc": "気になることがありますか？ChatGPTベースのハングル歴史専門AIと対話してみましょう。",
+    "history.gpt.button": "AIと対話する",
 
     "footer.desc": "ハングルの美しさを世界に伝えるウェブサイトです",
     "footer.unesco": "ユネスコ世界記録遺産 · 1997年登録",
