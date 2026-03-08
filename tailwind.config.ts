@@ -55,9 +55,6 @@ export default {
         vermillion: "hsl(var(--vermillion))",
         gold: "hsl(var(--gold))",
         jade: "hsl(var(--jade))",
-        "dancheong-blue": "hsl(var(--dancheong-blue))",
-        "dancheong-green": "hsl(var(--dancheong-green))",
-        "warm-brown": "hsl(var(--warm-brown))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
