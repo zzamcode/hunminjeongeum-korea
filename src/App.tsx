@@ -12,6 +12,7 @@ import Quotes from "./pages/Quotes";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 import YouTubePlayer from "./components/YouTubePlayer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/글자마당" element={<Posters />} />
