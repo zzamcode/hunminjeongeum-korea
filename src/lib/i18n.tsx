@@ -321,6 +321,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "音楽をオンにする",
     "player.mute": "音楽をオフにする",
+    "player.toast": "🎵 右下からBGMを聴くことができます",
   },
   zh: {
     "nav.principles": "原理",
