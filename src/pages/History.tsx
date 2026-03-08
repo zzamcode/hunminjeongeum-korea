@@ -134,12 +134,14 @@ const History = () => {
                     isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
                   } pl-14 md:pl-0`}
                 >
+                  {/* Timeline dot */}
                   <div
-                    className={`absolute w-3 h-3 rounded-full border-2 ${borderClass} bg-background top-1 left-[1.5rem] -translate-x-1/2 md:left-auto ${
+                    className={`absolute w-3 h-3 rounded-full border-2 ${borderClass} bg-background top-1 left-[1.5rem] -translate-x-1/2 ${
                       isLeft
-                        ? "md:right-[-2rem] md:translate-x-1/2"
-                        : "md:left-[-2rem] md:-translate-x-1/2"
+                        ? "md:left-auto md:right-[-2rem] md:translate-x-1/2"
+                        : "md:left-[-2rem]"
                     }`}
+                    style={!isLeft ? { left: undefined } : undefined}
                   />
 
                   <button onClick={() => toggle(i)} className="w-full text-left group">
