@@ -8,6 +8,7 @@ import Posters from "./pages/Posters";
 import History from "./pages/History";
 import HangulDay from "./pages/HangulDay";
 import Quotes from "./pages/Quotes";
+import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/posters" element={<Posters />} />
           <Route path="/history" element={<History />} />
           <Route path="/hangulday" element={<HangulDay />} />
+          <Route path="/news" element={<News />} />
           <Route path="/quotes" element={<Quotes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

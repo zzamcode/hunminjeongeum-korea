@@ -11,12 +11,21 @@ const PhilosophySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="text-sm tracking-[0.3em] text-vermillion/80 uppercase block mb-4">
-            Philosophy
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            애민 정신
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img
+              src="/images/sejong.jpg"
+              alt="세종대왕"
+              className="w-14 h-14 rounded-full object-cover border-2 border-vermillion/40 shadow-lg"
+            />
+            <div className="text-left">
+              <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground">
+                애민 정신
+              </h2>
+              <span className="text-xs tracking-[0.2em] text-primary-foreground/40">
+                세종대왕의 백성 사랑
+              </span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Quote */}
@@ -54,7 +63,7 @@ const PhilosophySection = () => {
             { number: "28", label: "초기 글자 수" },
             { number: "24", label: "현대 글자 수" },
             { number: "11,172", label: "조합 가능 음절" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-vermillion/80 mb-2">
                 {stat.number}
