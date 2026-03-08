@@ -11,21 +11,15 @@ const PhilosophySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <img
-              src="/images/sejong.jpg"
-              alt="세종대왕"
-              className="w-14 h-14 rounded-full object-cover border-2 border-vermillion/40 shadow-lg"
-            />
-            <div className="text-left">
-              <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground">
-                애민 정신
-              </h2>
-              <span className="text-xs tracking-[0.2em] text-primary-foreground/40">
-                세종대왕의 백성 사랑
-              </span>
-            </div>
-          </div>
+          <span className="text-sm tracking-[0.3em] text-vermillion/80 uppercase block mb-4">
+            Philosophy
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4">
+            애민 정신
+          </h2>
+          <p className="text-primary-foreground/50 max-w-lg mx-auto">
+            백성을 사랑하는 마음이 세계에서 가장 과학적인 문자를 탄생시켰습니다
+          </p>
         </motion.div>
 
         {/* Quote */}
