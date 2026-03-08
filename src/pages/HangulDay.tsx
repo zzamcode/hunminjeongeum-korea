@@ -310,6 +310,13 @@ const HangulDay = () => {
       >
         {selectedFact && (
           <div className="overflow-y-auto p-8 space-y-5">
+            <div className="rounded-sm overflow-hidden -mx-8 -mt-8 mb-6">
+              <img
+                src={selectedFact.image}
+                alt={selectedFact.title}
+                className="w-full h-48 md:h-56 object-cover"
+              />
+            </div>
             <div className="flex items-center gap-3">
               <span className="text-4xl">{selectedFact.icon}</span>
               <h3 className="text-xl font-bold text-foreground">{selectedFact.title}</h3>
