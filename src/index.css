@@ -97,6 +97,21 @@
   .border-vermillion {
     border-color: hsl(var(--vermillion));
   }
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  .border-jade {
+    border-color: hsl(var(--jade));
+  }
+  .border-l-vermillion {
+    border-left-color: hsl(var(--vermillion));
+  }
+  .border-l-gold {
+    border-left-color: hsl(var(--gold));
+  }
+  .border-l-jade {
+    border-left-color: hsl(var(--jade));
+  }
 }
 
 /* Brush stroke texture animation */

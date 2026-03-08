@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "원리", id: "principles" },
@@ -9,9 +10,19 @@ const navItems = [
   { label: "철학", id: "philosophy" },
 ];
 
+const moreItems = [
+  { label: "포스터 갤러리", path: "/posters" },
+  { label: "한글의 역사", path: "/history" },
+  { label: "한글날", path: "/hangulday" },
+  { label: "명언 컬렉션", path: "/quotes" },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -20,6 +31,10 @@ const Navbar = () => {
   }, []);
 
   const scrollTo = (id: string) => {
+    if (!isHome) {
+      window.location.href = `/#${id}`;
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
   };
@@ -36,25 +51,61 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <Link
+          to="/"
           className="text-lg font-bold text-foreground tracking-widest"
         >
           훈민정음
-        </button>
+        </Link>
 
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => scrollTo(item.id)}
-                className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
+          {isHome &&
+            navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollTo(item.id)}
+                  className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+
+          {/* More dropdown */}
+          <li className="relative">
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
+              className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors flex items-center gap-1"
+            >
+              더 알아보기
+              <ChevronDown size={14} className={`transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+            </button>
+
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 top-full mt-3 bg-background/95 backdrop-blur-md border border-border rounded-sm shadow-lg min-w-[10rem] py-2"
+                >
+                  {moreItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="block px-5 py-2.5 text-sm text-muted-foreground hover:text-vermillion hover:bg-muted/50 transition-colors tracking-wider"
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </li>
         </ul>
 
         {/* Mobile toggle */}
@@ -77,14 +128,29 @@ const Navbar = () => {
             className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
           >
             <ul className="flex flex-col items-center gap-6 py-8">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollTo(item.id)}
+              {isHome &&
+                navItems.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => scrollTo(item.id)}
+                      className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+
+              <li className="w-16 h-px bg-border" />
+
+              {moreItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileOpen(false)}
                     className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
