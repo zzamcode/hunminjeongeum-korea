@@ -35,10 +35,12 @@ const ResponsiveModal = ({
   if (isMobile) {
     return (
       <Drawer open={open} onOpenChange={onOpenChange}>
-        <DrawerContent className={`max-h-[85vh] border-border bg-background ${className}`}>
+        <DrawerContent className={`max-h-[85vh] border-border bg-background flex flex-col ${className}`}>
           <DrawerTitle className="sr-only">{title}</DrawerTitle>
           <DrawerDescription className="sr-only">{description}</DrawerDescription>
-          {children}
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            {children}
+          </div>
         </DrawerContent>
       </Drawer>
     );
@@ -46,10 +48,12 @@ const ResponsiveModal = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className={`max-w-lg border-border bg-background p-0 overflow-hidden max-h-[85vh] ${className}`}>
+      <DialogContent className={`max-w-lg border-border bg-background p-0 max-h-[85vh] flex flex-col ${className}`}>
         <DialogTitle className="sr-only">{title}</DialogTitle>
         <DialogDescription className="sr-only">{description}</DialogDescription>
-        {children}
+        <div className="flex-1 min-h-0 overflow-y-auto">
+          {children}
+        </div>
       </DialogContent>
     </Dialog>
   );
