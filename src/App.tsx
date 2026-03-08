@@ -8,6 +8,7 @@ import Posters from "./pages/Posters";
 import History from "./pages/History";
 import HangulDay from "./pages/HangulDay";
 import Quotes from "./pages/Quotes";
+import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
