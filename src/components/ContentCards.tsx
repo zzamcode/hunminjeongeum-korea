@@ -86,23 +86,45 @@ const ContentCards = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <Link
-                  to={card.path}
-                  className={`block bg-card border border-border rounded-sm p-7 ${accentBorder} hover:shadow-md transition-all duration-300 group h-full`}
-                >
-                  <div className={`text-3xl font-light ${accentText} opacity-60 mb-4`}>
-                    {card.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-vermillion transition-colors mb-2">
-                    {t(card.titleKey)}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {t(card.descKey)}
-                  </p>
-                  <span className="text-xs text-muted-foreground group-hover:text-vermillion mt-4 inline-block transition-colors">
-                    →
-                  </span>
-                </Link>
+                {card.external ? (
+                  <a
+                    href={card.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block bg-card border border-border rounded-sm p-7 ${accentBorder} hover:shadow-md transition-all duration-300 group h-full`}
+                  >
+                    <div className={`text-3xl font-light ${accentText} opacity-60 mb-4`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-vermillion transition-colors mb-2">
+                      {t(card.titleKey)}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {t(card.descKey)}
+                    </p>
+                    <span className="text-xs text-muted-foreground group-hover:text-vermillion mt-4 inline-block transition-colors">
+                      ↗
+                    </span>
+                  </a>
+                ) : (
+                  <Link
+                    to={card.path}
+                    className={`block bg-card border border-border rounded-sm p-7 ${accentBorder} hover:shadow-md transition-all duration-300 group h-full`}
+                  >
+                    <div className={`text-3xl font-light ${accentText} opacity-60 mb-4`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-vermillion transition-colors mb-2">
+                      {t(card.titleKey)}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {t(card.descKey)}
+                    </p>
+                    <span className="text-xs text-muted-foreground group-hover:text-vermillion mt-4 inline-block transition-colors">
+                      →
+                    </span>
+                  </Link>
+                )}
               </motion.div>
             );
           })}

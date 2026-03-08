@@ -185,6 +185,32 @@ const History = () => {
             })}
           </div>
         </div>
+
+        {/* GPT CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto mt-20 mb-8 text-center"
+        >
+          <div className="bg-card border border-border rounded-sm p-10">
+            <div className="text-4xl font-light text-jade opacity-60 mb-4">智</div>
+            <h3 className="text-xl font-bold text-foreground mb-3">
+              {t("history.gpt.title")}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              {t("history.gpt.desc")}
+            </p>
+            <a
+              href="https://chatgpt.com/g/g-69ad4daef17c819198ab5a2c04c91803-hangeulyi-yeogsa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-jade/10 text-jade border border-jade/30 rounded-sm hover:bg-jade/20 transition-colors font-medium text-sm"
+            >
+              {t("history.gpt.button")} ↗
+            </a>
+          </div>
+        </motion.div>
       </section>
       <FooterSection />
     </main>
