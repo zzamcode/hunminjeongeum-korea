@@ -123,6 +123,7 @@ const translations: Record<Locale, Translations> = {
     // YouTube player
     "player.unmute": "음악 켜기",
     "player.mute": "음악 끄기",
+    "player.toast": "🎵 우측 하단에서 배경 음악을 들을 수 있습니다",
   },
   en: {
     "nav.principles": "Principles",
@@ -221,6 +222,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "Turn on music",
     "player.mute": "Turn off music",
+    "player.toast": "🎵 You can listen to background music from the bottom right",
   },
   ja: {
     "nav.principles": "原理",
@@ -319,6 +321,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "音楽をオンにする",
     "player.mute": "音楽をオフにする",
+    "player.toast": "🎵 右下からBGMを聴くことができます",
   },
   zh: {
     "nav.principles": "原理",
@@ -417,6 +420,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "打开音乐",
     "player.mute": "关闭音乐",
+    "player.toast": "🎵 您可以在右下角收听背景音乐",
   },
   es: {
     "nav.principles": "Principios",
@@ -515,6 +519,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "Activar música",
     "player.mute": "Desactivar música",
+    "player.toast": "🎵 Puede escuchar música de fondo en la esquina inferior derecha",
   },
 };
 

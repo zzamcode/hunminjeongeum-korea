@@ -1,6 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Volume2, VolumeX, SkipForward, SkipBack } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { useToast } from "@/hooks/use-toast";
 
 const playlist = [
   "MrNeTVM1fYw",
@@ -11,10 +12,26 @@ const playlist = [
   "6iSRFRCC-LI",
 ];
 
+const TOAST_SHOWN_KEY = "hangul-music-toast-shown";
+
 const YouTubePlayer = () => {
   const { t } = useI18n();
+  const { toast } = useToast();
   const [muted, setMuted] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const alreadyShown = sessionStorage.getItem(TOAST_SHOWN_KEY);
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        toast({
+          description: t("player.toast"),
+        });
+        sessionStorage.setItem(TOAST_SHOWN_KEY, "1");
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const videoId = playlist[currentIndex];
   const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&mute=${muted ? 1 : 0}&enablejsapi=1`;
