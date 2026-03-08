@@ -197,6 +197,11 @@ const translations: Record<Locale, Translations> = {
     "cards.news.desc": "Global media coverage of Hangul from CNN, NYT, and more",
     "cards.posters.title": "Letter Gallery",
     "cards.posters.desc": "Experience the beauty of Hangul letters through posters",
+    "cards.gpt.title": "Chat with AI about Hangul",
+    "cards.gpt.desc": "Ask questions and explore the history of Hangul with ChatGPT",
+    "history.gpt.title": "Ask AI about Hangul History",
+    "history.gpt.desc": "Have questions? Chat with our ChatGPT-powered Hangul history expert.",
+    "history.gpt.button": "Chat with AI",
 
     "footer.desc": "A website dedicated to sharing the beauty of Hangul",
     "footer.unesco": "UNESCO Memory of the World · Inscribed 1997",
