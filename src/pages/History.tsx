@@ -113,7 +113,7 @@ const History = () => {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[1.5rem] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-[1.5rem] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-[0.5px]" />
 
             {events.map((event, i) => {
               const isLeft = i % 2 === 0;
@@ -137,12 +137,12 @@ const History = () => {
                     isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
                   } pl-14 md:pl-0`}
                 >
-                  {/* Timeline dot - precisely aligned to the vertical line */}
+                  {/* Timeline dot */}
                   <div
-                    className={`absolute top-1 w-3 h-3 rounded-full border-2 ${borderClass} bg-background left-[0.9375rem] -translate-x-1/2 md:left-auto ${
+                    className={`absolute w-3 h-3 rounded-full border-2 ${borderClass} bg-background top-1 left-[1.5rem] -translate-x-1/2 md:left-auto ${
                       isLeft
-                        ? "md:right-0 md:translate-x-[calc(2rem+0.5px)] md:left-auto"
-                        : "md:left-0 md:-translate-x-[calc(2rem+0.5px)]"
+                        ? "md:right-[-2rem] md:translate-x-1/2"
+                        : "md:left-[-2rem] md:-translate-x-1/2"
                     }`}
                   />
 
