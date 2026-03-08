@@ -249,7 +249,7 @@ const HangulDay = () => {
                 onClick={() => setSelectedGlobal(item)}
                 className="bg-background rounded-sm border border-border overflow-hidden cursor-pointer group hover:shadow-md transition-shadow"
               >
-                <div className={`h-56 overflow-hidden ${item.image.includes('topik') ? 'bg-white flex items-center justify-center p-4' : ''}`}>
+                <div className={`h-72 overflow-hidden ${item.image.includes('topik') ? 'bg-white flex items-center justify-center p-4' : ''}`}>
                   <img
                     src={item.image}
                     alt={item.title}
