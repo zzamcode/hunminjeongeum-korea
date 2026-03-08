@@ -12,6 +12,7 @@ import Quotes from "./pages/Quotes";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 import YouTubePlayer from "./components/YouTubePlayer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
