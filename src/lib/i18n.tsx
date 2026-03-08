@@ -87,6 +87,11 @@ const translations: Record<Locale, Translations> = {
     "cards.news.desc": "CNN, NYT 등 세계가 주목하는 한글 뉴스",
     "cards.posters.title": "글자 마당",
     "cards.posters.desc": "한글 자모의 아름다움을 포스터로 감상하세요",
+    "cards.gpt.title": "AI와 한글 역사 대화",
+    "cards.gpt.desc": "ChatGPT로 한글의 역사를 자유롭게 질문하고 탐구해보세요",
+    "history.gpt.title": "AI에게 한글의 역사를 물어보세요",
+    "history.gpt.desc": "궁금한 점이 있으신가요? ChatGPT 기반 한글 역사 전문 AI와 대화해보세요.",
+    "history.gpt.button": "AI와 대화하기",
 
     // Footer
     "footer.desc": "한글의 아름다움을 알리기 위해 만들어진 웹사이트입니다",
