@@ -9,6 +9,7 @@ type Fact = {
   title: string;
   desc: string;
   icon: string;
+  image: string;
   detail: { fullDesc: string; history: string; significance: string };
 };
 
