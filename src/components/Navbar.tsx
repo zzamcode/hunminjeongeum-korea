@@ -15,6 +15,7 @@ const moreItems = [
   { label: "한글의 역사", path: "/history" },
   { label: "한글날", path: "/hangulday" },
   { label: "한글을 빛낸 말들", path: "/quotes" },
+  { label: "한글 소식", path: "/news" },
 ];
 
 const Navbar = () => {
