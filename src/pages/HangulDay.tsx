@@ -52,28 +52,28 @@ const globalReach = [
     title: "찌아찌아족의 한글",
     location: "인도네시아 부톤섬",
     desc: "2009년, 고유 문자가 없던 소수민족이 한글을 선택했습니다.",
-    image: "/images/global-ciacia.jpg",
+    image: "/images/global-ciacia.png",
     detail: "인도네시아 술라웨시 남동쪽 부톤섬에 사는 찌아찌아족은 약 8만 명의 소수민족입니다. 그들에게는 고유한 언어가 있었지만 문자가 없어, 아이들에게 말을 가르칠 수는 있어도 글로 남길 수는 없었습니다.\n\n로마 알파벳으로 표기를 시도했지만, 찌아찌아어에는 로마자로 구별할 수 없는 미묘한 발음 차이가 많았습니다. 그때 한글이 해답이 되었습니다. 한글은 찌아찌아어의 복잡한 발음을 거의 완벽하게 표기할 수 있었습니다.\n\n현지 초등학교에서 한글 수업이 시작되었고, 한글 교과서도 만들어졌습니다. 아이들이 처음으로 자기 말을 글로 적는 순간, 세종대왕이 꿈꾸었던 일이 지구 반대편에서 현실이 되었습니다.",
   },
   {
     title: "한국어능력시험(TOPIK)",
     location: "전 세계 87개국",
     desc: "매년 40만 명 이상이 한국어를 배우고 시험에 응시합니다.",
-    image: "/images/global-topik.jpg",
+    image: "/images/global-topik.png",
     detail: "TOPIK은 1997년 약 2,700명의 응시자로 시작했습니다. 그로부터 25년 뒤, 연간 응시자 수는 40만 명을 넘어섰습니다. 150배가 넘는 증가입니다.\n\n무엇이 이 폭발적 성장을 이끌었을까요? K-팝, K-드라마, K-영화의 세계적 인기입니다. BTS의 노래를 원어로 이해하고 싶어서, 《기생충》의 대사를 자막 없이 듣고 싶어서, 전 세계 젊은이들이 한국어를 배우기 시작했습니다.\n\n그리고 그들이 공통적으로 놀라는 것이 있습니다. 한글이 놀라울 만큼 배우기 쉽다는 것. 대부분의 학습자가 며칠 만에 한글을 읽을 수 있게 됩니다. 580년 전 세종의 약속—'열흘이면 배울 수 있다'—이 지금도 유효한 것입니다.",
   },
   {
     title: "세종학당",
     location: "전 세계 82개국 234곳",
     desc: "한국어와 한글을 세계에 알리는 공공 교육 기관입니다.",
-    image: "/images/global-sejong.jpg",
+    image: "/images/global-sejong.png",
     detail: "2007년 몽골에 처음 문을 연 세종학당은 현재 82개국 234개소로 확대되었습니다. 프랑스의 알리앙스 프랑세즈, 독일의 괴테 인스티투트, 중국의 공자학원에 해당하는 한국어·한국문화 교육 기관입니다.\n\n세종학당이라는 이름에는 깊은 의미가 담겨 있습니다. 580년 전 세종대왕이 백성을 위해 쉬운 문자를 만든 것처럼, 세종학당은 세계인에게 한국어의 문을 활짝 열어주고 있습니다.\n\n한국어 수업뿐 아니라 한글 서예, 한국 요리, 전통 문화 체험 등 다채로운 프로그램을 제공합니다. 한류의 확산과 함께 입학 대기자가 줄을 서는 곳도 많습니다.",
   },
   {
     title: "한글과 유니코드",
     location: "전 세계 디지털 환경",
     desc: "11,172개 음절이 체계적으로 배열된, 유니코드 속 가장 과학적인 문자 블록.",
-    image: "/images/global-unicode.jpg",
+    image: "/images/global-unicode.png",
     detail: "유니코드(Unicode)는 전 세계 모든 문자를 하나의 표준으로 통합한 디지털 문자 체계입니다. 이 거대한 체계 안에서 한글은 특별한 위치를 차지합니다.\n\n한글은 유니코드에서 '한글 음절(Hangul Syllables)' 블록에 11,172개의 완성형 음절이 배정되어 있습니다. 이는 단일 문자 체계로는 가장 큰 블록 중 하나입니다. 더 놀라운 것은 이 11,172개가 무작위가 아니라, 초성·중성·종성의 조합 규칙에 따라 수학적으로 정확히 배열되어 있다는 것입니다.\n\n유니코드 컨소시엄의 전문가들은 한글의 이 체계적 구조 덕분에 검색, 정렬, 입력 등 디지털 처리가 매우 효율적이라고 평가합니다. 580년 전 세종이 설계한 조합 원리가 디지털 시대에도 완벽하게 작동하는 것입니다.",
   },
   {
@@ -87,7 +87,7 @@ const globalReach = [
     title: "한류와 한글의 세계화",
     location: "전 세계 190개국 이상",
     desc: "K-pop, K-drama, K-영화가 한글을 세계인의 일상 속으로 가져왔습니다.",
-    image: "/images/global-hallyu.jpg",
+    image: "/images/global-hallyu.png",
     detail: "BTS의 노래 가사를 따라 부르기 위해, 《오징어 게임》의 대사를 자막 없이 이해하기 위해, 전 세계 수백만 명이 한글을 배우기 시작했습니다. 이것은 역사상 전례 없는 문화적 현상입니다.\n\n소셜 미디어에서 한글은 이제 '쿨한 문자'로 인식됩니다. 전 세계 팬들이 한글로 된 해시태그를 사용하고, 한글 타투를 새기고, 한글 캘리그래피를 배웁니다. 듀오링고(Duolingo)에서 한국어는 영어 사용자가 선택하는 언어 중 상위 10위 안에 들어 있습니다.\n\n더 흥미로운 것은, 한글의 디자인적 아름다움이 패션과 예술 분야에서도 주목받고 있다는 점입니다. 구찌, 나이키 등 글로벌 브랜드가 한글을 디자인 요소로 활용하고, 해외 아티스트들이 한글의 기하학적 아름다움에 영감을 받아 작품을 만들고 있습니다.",
   },
 ];
@@ -185,11 +185,11 @@ const HangulDay = () => {
                 onClick={() => setSelectedGlobal(item)}
                 className="bg-background rounded-sm border border-border overflow-hidden cursor-pointer group hover:shadow-md transition-shadow"
               >
-                <div className="h-44 overflow-hidden">
+                <div className={`h-44 overflow-hidden ${item.image.includes('topik') || item.image.includes('unicode') ? 'bg-white flex items-center justify-center p-4' : ''}`}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${item.image.includes('topik') || item.image.includes('unicode') ? 'object-contain' : 'object-cover'}`}
                   />
                 </div>
                 <div className="p-6">
