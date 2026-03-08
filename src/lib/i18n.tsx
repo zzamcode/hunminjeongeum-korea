@@ -123,6 +123,7 @@ const translations: Record<Locale, Translations> = {
     // YouTube player
     "player.unmute": "음악 켜기",
     "player.mute": "음악 끄기",
+    "player.toast": "🎵 우측 하단에서 배경 음악을 들을 수 있습니다",
   },
   en: {
     "nav.principles": "Principles",
