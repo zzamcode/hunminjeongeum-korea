@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
+import ResponsiveModal from "@/components/ResponsiveModal";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
