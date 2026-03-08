@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
+// Letter data stays in Korean — these are Hangul linguistic artifacts
 const consonants = [
   { letter: "ㄱ", name: "기역", origin: "혀뿌리가 목구멍을 막는 모양" },
   { letter: "ㄴ", name: "니은", origin: "혀끝이 윗잇몸에 닿는 모양" },
@@ -32,6 +34,7 @@ const vowels = [
 ];
 
 const LettersShowcase = () => {
+  const { t } = useI18n();
   const [hoveredLetter, setHoveredLetter] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"consonants" | "vowels">("consonants");
 
@@ -48,16 +51,15 @@ const LettersShowcase = () => {
           className="text-center mb-16"
         >
           <span className="text-sm tracking-[0.3em] text-muted-foreground uppercase block mb-4">
-            Letters
+            {t("letters.label")}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-ink mb-4">
-            자모음
+            {t("letters.title")}
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto mb-10">
-            각 글자에는 소리의 원리가 담겨 있습니다
+            {t("letters.desc")}
           </p>
 
-          {/* Tab toggle */}
           <div className="inline-flex border border-border">
             <button
               onClick={() => setActiveTab("consonants")}
@@ -67,7 +69,7 @@ const LettersShowcase = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              자음 · 14
+              {t("letters.consonants")}
             </button>
             <button
               onClick={() => setActiveTab("vowels")}
@@ -77,12 +79,11 @@ const LettersShowcase = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              모음 · 10
+              {t("letters.vowels")}
             </button>
           </div>
         </motion.div>
 
-        {/* Letters grid */}
         <motion.div
           key={activeTab}
           initial={{ opacity: 0 }}
@@ -105,7 +106,6 @@ const LettersShowcase = () => {
                 {item.letter}
               </span>
 
-              {/* Hover tooltip */}
               {hoveredLetter === item.letter && (
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
@@ -120,7 +120,6 @@ const LettersShowcase = () => {
           ))}
         </motion.div>
 
-        {/* Featured large letter */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

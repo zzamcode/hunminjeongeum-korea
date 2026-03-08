@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
 
 const PhilosophySection = () => {
+  const { t } = useI18n();
+
   return (
     <section id="philosophy" className="py-32 px-6 bg-ink relative overflow-hidden scroll-mt-16">
       <div className="max-w-4xl mx-auto relative z-10">
@@ -12,17 +15,17 @@ const PhilosophySection = () => {
           className="text-center mb-20"
         >
           <span className="text-sm tracking-[0.3em] text-vermillion/80 uppercase block mb-4">
-            Philosophy
+            {t("philosophy.label")}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4">
-            애민 정신
+            {t("philosophy.title")}
           </h2>
           <p className="text-primary-foreground/50 max-w-lg mx-auto">
-            백성을 사랑하는 마음이 세계에서 가장 과학적인 문자를 탄생시켰습니다
+            {t("philosophy.desc")}
           </p>
         </motion.div>
 
-        {/* Quote */}
+        {/* Quote — original Korean text preserved */}
         <motion.blockquote
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +43,7 @@ const PhilosophySection = () => {
           </p>
           <div className="text-vermillion/30 text-6xl">」</div>
           <footer className="mt-6 text-sm text-primary-foreground/40 tracking-widest">
-            — 훈민정음 서문, 세종대왕
+            {t("philosophy.quote.attr")}
           </footer>
         </motion.blockquote>
 
@@ -53,10 +56,10 @@ const PhilosophySection = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-primary-foreground/10 pt-12"
         >
           {[
-            { number: "1443", label: "창제년도" },
-            { number: "28", label: "초기 글자 수" },
-            { number: "24", label: "현대 글자 수" },
-            { number: "11,172", label: "조합 가능 음절" },
+            { number: "1443", label: t("philosophy.stat.year") },
+            { number: "28", label: t("philosophy.stat.initial") },
+            { number: "24", label: t("philosophy.stat.modern") },
+            { number: "11,172", label: t("philosophy.stat.syllables") },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-vermillion/80 mb-2">
