@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-lg font-bold text-foreground tracking-widest"
+          className={`text-lg font-bold tracking-widest transition-colors ${scrolled ? "text-foreground" : "text-hanji"}`}
         >
           훈민정음
         </button>
