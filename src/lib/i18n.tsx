@@ -420,6 +420,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "打开音乐",
     "player.mute": "关闭音乐",
+    "player.toast": "🎵 您可以在右下角收听背景音乐",
   },
   es: {
     "nav.principles": "Principios",
