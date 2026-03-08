@@ -11,6 +11,7 @@ import HangulDay from "./pages/HangulDay";
 import Quotes from "./pages/Quotes";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
+import YouTubePlayer from "./components/YouTubePlayer";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <YouTubePlayer />
       </I18nProvider>
     </TooltipProvider>
   </QueryClientProvider>
