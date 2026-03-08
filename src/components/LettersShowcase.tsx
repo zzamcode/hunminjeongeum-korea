@@ -38,7 +38,7 @@ const LettersShowcase = () => {
   const letters = activeTab === "consonants" ? consonants : vowels;
 
   return (
-    <section className="py-32 px-6 hanji-texture">
+    <section id="letters" className="py-32 px-6 hanji-texture scroll-mt-16">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
