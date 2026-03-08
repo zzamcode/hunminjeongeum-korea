@@ -5,7 +5,6 @@ import { useToast } from "@/hooks/use-toast";
 
 const playlist = [
   "MrNeTVM1fYw",
-  "JgujsLFO7yo",
   "HyTmG2aaQTg",
   "4ST1ksBbiaw",
   "kOlP6bizEwk",
