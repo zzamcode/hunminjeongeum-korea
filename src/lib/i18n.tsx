@@ -405,6 +405,11 @@ const translations: Record<Locale, Translations> = {
     "cards.news.desc": "CNN、NYT等世界媒体对韩文的关注报道",
     "cards.posters.title": "字母展览",
     "cards.posters.desc": "通过海报欣赏韩文字母之美",
+    "cards.gpt.title": "AI与韩文历史对话",
+    "cards.gpt.desc": "用ChatGPT自由提问，探索韩文的历史",
+    "history.gpt.title": "向AI询问韩文历史",
+    "history.gpt.desc": "有疑问吗？与基于ChatGPT的韩文历史专家AI对话吧。",
+    "history.gpt.button": "与AI对话",
 
     "footer.desc": "一个致力于展示韩文之美的网站",
     "footer.unesco": "联合国教科文组织世界记忆遗产 · 1997年入选",
