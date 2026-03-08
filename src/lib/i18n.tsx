@@ -222,6 +222,7 @@ const translations: Record<Locale, Translations> = {
 
     "player.unmute": "Turn on music",
     "player.mute": "Turn off music",
+    "player.toast": "🎵 You can listen to background music from the bottom right",
   },
   ja: {
     "nav.principles": "原理",
