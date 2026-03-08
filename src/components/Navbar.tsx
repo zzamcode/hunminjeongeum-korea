@@ -49,7 +49,7 @@ const Navbar = () => {
             <li key={item.id}>
               <button
                 onClick={() => scrollTo(item.id)}
-                className="text-sm tracking-widest text-muted-foreground hover:text-vermillion transition-colors"
+                className={`text-sm tracking-widest hover:text-vermillion transition-colors ${scrolled ? "text-muted-foreground" : "text-hanji/70"}`}
               >
                 {item.label}
               </button>
