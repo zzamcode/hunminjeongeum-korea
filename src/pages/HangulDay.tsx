@@ -189,7 +189,7 @@ const HangulDay = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${item.image.includes('topik') || item.image.includes('unicode') ? 'object-contain' : 'object-cover'}`}
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${item.image.includes('topik') ? 'object-contain' : 'object-cover'}`}
                   />
                 </div>
                 <div className="p-6">
