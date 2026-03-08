@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -154,10 +154,11 @@ const Quotes = () => {
         </div>
       </section>
 
-      {/* Detail Dialog */}
-      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
-        <DialogContent className="max-w-lg border-border bg-background p-0 overflow-hidden">
-          <DialogTitle className="sr-only">{selected?.author}의 명언</DialogTitle>
+      {/* Detail Drawer */}
+      <Drawer open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
+        <DrawerContent className="max-h-[85vh] border-border bg-background">
+          <DrawerTitle className="sr-only">{selected?.author}의 명언</DrawerTitle>
+          <DrawerDescription className="sr-only">{selected?.author}의 명언 상세 정보</DrawerDescription>
           {selected && (() => {
             const accentText =
               selected.accent === "vermillion"
@@ -173,8 +174,7 @@ const Quotes = () => {
                 : "border-jade";
 
             return (
-              <div className="p-8 space-y-6">
-                {/* Full quote */}
+              <div className="overflow-y-auto p-8 space-y-6">
                 <div className={`border-l-4 ${accentBorder} pl-6`}>
                   <p className="text-foreground leading-[1.9] text-base italic">
                     "{selected.fullText}"
@@ -191,13 +191,11 @@ const Quotes = () => {
                   </div>
                 </div>
 
-                {/* Bio */}
                 <div>
                   <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">인물 소개</h4>
                   <p className="text-sm text-foreground/80 leading-relaxed">{selected.bio}</p>
                 </div>
 
-                {/* Context */}
                 <div className="bg-muted/50 rounded-sm p-4">
                   <h4 className="text-xs font-bold text-muted-foreground tracking-widest mb-2">📖 배경</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{selected.context}</p>
@@ -205,8 +203,8 @@ const Quotes = () => {
               </div>
             );
           })()}
-        </DialogContent>
-      </Dialog>
+        </DrawerContent>
+      </Drawer>
 
       <FooterSection />
     </main>

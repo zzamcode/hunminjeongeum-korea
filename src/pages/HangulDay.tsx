@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Drawer, DrawerContent, DrawerTitle, DrawerDescription } from "@/components/ui/drawer";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -193,12 +193,13 @@ const HangulDay = () => {
         </div>
       </section>
 
-      {/* Fact Detail Dialog */}
-      <Dialog open={!!selectedFact} onOpenChange={() => setSelectedFact(null)}>
-        <DialogContent className="max-w-lg border-border bg-background">
-          <DialogTitle className="sr-only">{selectedFact?.title}</DialogTitle>
+      {/* Fact Detail Drawer */}
+      <Drawer open={!!selectedFact} onOpenChange={(open) => !open && setSelectedFact(null)}>
+        <DrawerContent className="max-h-[85vh] border-border bg-background">
+          <DrawerTitle className="sr-only">{selectedFact?.title}</DrawerTitle>
+          <DrawerDescription className="sr-only">{selectedFact?.title} 상세 정보</DrawerDescription>
           {selectedFact && (
-            <div className="space-y-5">
+            <div className="overflow-y-auto p-8 space-y-5">
               <div className="flex items-center gap-3">
                 <span className="text-4xl">{selectedFact.icon}</span>
                 <h3 className="text-xl font-bold text-foreground">{selectedFact.title}</h3>
@@ -214,15 +215,16 @@ const HangulDay = () => {
               </div>
             </div>
           )}
-        </DialogContent>
-      </Dialog>
+        </DrawerContent>
+      </Drawer>
 
-      {/* Global Detail Dialog */}
-      <Dialog open={!!selectedGlobal} onOpenChange={() => setSelectedGlobal(null)}>
-        <DialogContent className="max-w-lg border-border bg-background">
-          <DialogTitle className="sr-only">{selectedGlobal?.title}</DialogTitle>
+      {/* Global Detail Drawer */}
+      <Drawer open={!!selectedGlobal} onOpenChange={(open) => !open && setSelectedGlobal(null)}>
+        <DrawerContent className="max-h-[85vh] border-border bg-background">
+          <DrawerTitle className="sr-only">{selectedGlobal?.title}</DrawerTitle>
+          <DrawerDescription className="sr-only">{selectedGlobal?.title} 상세 정보</DrawerDescription>
           {selectedGlobal && (
-            <div className="space-y-5">
+            <div className="overflow-y-auto p-8 space-y-5">
               <div>
                 <h3 className="text-xl font-bold text-foreground">{selectedGlobal.title}</h3>
                 <span className="text-xs text-vermillion tracking-widest">{selectedGlobal.location}</span>
@@ -230,8 +232,8 @@ const HangulDay = () => {
               <p className="text-sm text-foreground/80 leading-[1.8]">{selectedGlobal.detail}</p>
             </div>
           )}
-        </DialogContent>
-      </Dialog>
+        </DrawerContent>
+      </Drawer>
 
       <FooterSection />
     </main>
