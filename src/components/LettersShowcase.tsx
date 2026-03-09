@@ -115,11 +115,24 @@ const LettersShowcase = () => {
               transition={{ duration: 0.3, delay: index * 0.03 }}
               onMouseEnter={() => setHoveredLetter(item.letter)}
               onMouseLeave={() => setHoveredLetter(null)}
-              className="relative aspect-square flex items-center justify-center border border-border hover:border-vermillion/40 transition-all duration-300 cursor-default group"
+              onClick={() => speakLetter(item.name, item.letter)}
+              className="relative aspect-square flex items-center justify-center border border-border hover:border-vermillion/40 transition-all duration-300 cursor-pointer group"
             >
-              <span className="text-3xl md:text-4xl font-bold text-ink group-hover:text-vermillion transition-colors duration-300">
+              <span className={`text-3xl md:text-4xl font-bold transition-colors duration-300 ${
+                playingLetter === item.letter ? "text-vermillion" : "text-ink group-hover:text-vermillion"
+              }`}>
                 {item.letter}
               </span>
+
+              {playingLetter === item.letter && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute top-1 right-1"
+                >
+                  <Volume2 className="w-3.5 h-3.5 text-vermillion animate-pulse" />
+                </motion.div>
+              )}
 
               {hoveredLetter === item.letter && (
                 <motion.div
@@ -129,6 +142,7 @@ const LettersShowcase = () => {
                 >
                   <span className="font-bold">{item.name}</span>
                   <span className="text-primary-foreground/60 ml-2">{item.origin}</span>
+                  <span className="text-vermillion/80 ml-2">🔊</span>
                 </motion.div>
               )}
             </motion.div>
