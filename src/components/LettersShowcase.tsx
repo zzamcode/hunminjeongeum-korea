@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useI18n } from "@/lib/i18n";
+import { Volume2 } from "lucide-react";
 
 // Letter data stays in Korean — these are Hangul linguistic artifacts
 const consonants = [
@@ -37,8 +38,22 @@ const LettersShowcase = () => {
   const { t } = useI18n();
   const [hoveredLetter, setHoveredLetter] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"consonants" | "vowels">("consonants");
+  const [playingLetter, setPlayingLetter] = useState<string | null>(null);
 
   const letters = activeTab === "consonants" ? consonants : vowels;
+
+  const speakLetter = useCallback((name: string, letter: string) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(name);
+    utterance.lang = "ko-KR";
+    utterance.rate = 0.8;
+    setPlayingLetter(letter);
+    utterance.onend = () => setPlayingLetter(null);
+    utterance.onerror = () => setPlayingLetter(null);
+    window.speechSynthesis.speak(utterance);
+  }, []);
+
 
   return (
     <section id="letters" className="py-32 px-6 hanji-texture scroll-mt-16">
@@ -100,11 +115,24 @@ const LettersShowcase = () => {
               transition={{ duration: 0.3, delay: index * 0.03 }}
               onMouseEnter={() => setHoveredLetter(item.letter)}
               onMouseLeave={() => setHoveredLetter(null)}
-              className="relative aspect-square flex items-center justify-center border border-border hover:border-vermillion/40 transition-all duration-300 cursor-default group"
+              onClick={() => speakLetter(item.name, item.letter)}
+              className="relative aspect-square flex items-center justify-center border border-border hover:border-vermillion/40 transition-all duration-300 cursor-pointer group"
             >
-              <span className="text-3xl md:text-4xl font-bold text-ink group-hover:text-vermillion transition-colors duration-300">
+              <span className={`text-3xl md:text-4xl font-bold transition-colors duration-300 ${
+                playingLetter === item.letter ? "text-vermillion" : "text-ink group-hover:text-vermillion"
+              }`}>
                 {item.letter}
               </span>
+
+              {playingLetter === item.letter && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute top-1 right-1"
+                >
+                  <Volume2 className="w-3.5 h-3.5 text-vermillion animate-pulse" />
+                </motion.div>
+              )}
 
               {hoveredLetter === item.letter && (
                 <motion.div
@@ -114,6 +142,7 @@ const LettersShowcase = () => {
                 >
                   <span className="font-bold">{item.name}</span>
                   <span className="text-primary-foreground/60 ml-2">{item.origin}</span>
+                  <span className="text-vermillion/80 ml-2">🔊</span>
                 </motion.div>
               )}
             </motion.div>
