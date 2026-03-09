@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useI18n } from "@/lib/i18n";
+import { Volume2 } from "lucide-react";
 
 // Letter data stays in Korean — these are Hangul linguistic artifacts
 const consonants = [
