@@ -38,8 +38,22 @@ const LettersShowcase = () => {
   const { t } = useI18n();
   const [hoveredLetter, setHoveredLetter] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"consonants" | "vowels">("consonants");
+  const [playingLetter, setPlayingLetter] = useState<string | null>(null);
 
   const letters = activeTab === "consonants" ? consonants : vowels;
+
+  const speakLetter = useCallback((name: string, letter: string) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(name);
+    utterance.lang = "ko-KR";
+    utterance.rate = 0.8;
+    setPlayingLetter(letter);
+    utterance.onend = () => setPlayingLetter(null);
+    utterance.onerror = () => setPlayingLetter(null);
+    window.speechSynthesis.speak(utterance);
+  }, []);
+
 
   return (
     <section id="letters" className="py-32 px-6 hanji-texture scroll-mt-16">
