@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# 훈민정음 코리아
 
-## Project info
+한글은 단순한 문자가 아닙니다.  
+누구나 배우고, 읽고, 자신의 생각을 표현할 수 있도록 만들어진 가장 위대한 배려의 문자입니다.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+이 프로젝트는 훈민정음의 탄생 배경과 한글의 원리를 더 많은 사람이 쉽고 흥미롭게 이해할 수 있도록 만들었습니다.  
+한국인에게는 자부심을, 처음 접하는 사람에게는 감탄을 전하는 것이 목표입니다.
 
-## How can I edit this code?
+세종대왕이 창제한 훈민정음은 일부만을 위한 문자가 아니라 백성을 위한 문자였습니다.  
+쉽고, 과학적이며, 아름답고, 지금도 살아 숨 쉬는 문화유산입니다.  
+이 저장소는 그런 한글의 가치와 역사를 오늘의 웹 경험으로 풀어내기 위한 작업입니다.
 
-There are several ways of editing your application.
+## 왜 이 프로젝트를 만들었나요?
 
-**Use Lovable**
+훈민정음은 교과서 속 지식으로만 남기에는 너무 위대한 유산입니다.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- 왜 한글이 만들어졌는지
+- 어떤 철학과 원리로 설계되었는지
+- 왜 지금도 세계적으로 독창적인 문자 체계로 평가받는지
 
-Changes made via Lovable will be committed automatically to this repo.
+이 프로젝트는 이런 질문에 더 쉽고 더 즐겁게 답하기 위해 시작되었습니다.  
+한글을 잘 아는 사람에게는 다시 한 번 그 가치를 떠올리게 하고, 처음 접하는 사람에게는 한국 문화의 깊이를 보여주는 경험을 만드는 것이 목적입니다.
 
-**Use your preferred IDE**
+## 담고 싶은 가치
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 한글은 자랑할 만한 문화유산이라는 점
+- 훈민정음은 백성을 위한 문자였다는 점
+- 한글의 과학성과 철학을 현대적으로 전달할 수 있다는 점
+- 한국인이 함께 더 좋은 설명과 경험으로 발전시킬 수 있다는 점
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 이 프로젝트에서 기대하는 경험
 
-Follow these steps:
+- 한글과 훈민정음의 역사를 자연스럽게 이해할 수 있는 경험
+- 어렵고 딱딱한 설명 대신 누구나 편하게 읽을 수 있는 구성
+- 한국인이 봤을 때 기분 좋고, 한글이 더 자랑스럽게 느껴지는 흐름
+- 기여자가 내용을 보강하고 발전시키기 쉬운 열린 구조
+
+## 함께 만들어 주세요
+
+이 프로젝트는 혼자 완성하는 저장소가 아니라, 함께 가치를 키워가는 저장소가 되었으면 합니다.
+
+기여는 아래와 같은 형태로 환영합니다.
+
+- 한글 역사와 훈민정음 관련 설명 보강
+- 잘못된 표현, 어색한 문장, 사실 관계 수정
+- UI/UX 개선
+- 교육용 콘텐츠 아이디어 제안
+- 번역, 접근성, 반응형 개선
+- 디자인, 인터랙션, 시각 자료 강화
+
+한글을 좋아하는 사람, 한국어 교육에 관심 있는 사람,  
+개발과 디자인으로 한국 문화를 더 멋지게 소개하고 싶은 사람이라면 누구든지 기여할 수 있습니다.
+
+## 기술 스택
+
+이 프로젝트는 다음 기술을 기반으로 만들어졌습니다.
+
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Vitest
+
+## 로컬에서 실행하기
+
+사전 준비:
+
+- Node.js 18 이상 권장
+- npm 사용 가능 환경
+
+실행 방법:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/zzamcode/hunminjeongeum-korea.git
+cd hunminjeongeum-korea
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+기본 개발 서버는 Vite로 실행됩니다.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 테스트와 빌드
 
-**Use GitHub Codespaces**
+```sh
+npm run test
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 기여 방법
 
-## What technologies are used for this project?
+1. 저장소를 포크하거나 브랜치를 생성합니다.
+2. 수정 내용을 반영합니다.
+3. 가능하면 테스트나 빌드로 변경 사항을 확인합니다.
+4. Pull Request를 보내 주세요.
 
-This project is built with:
+콘텐츠 보강, 문장 다듬기, 디자인 개선 같은 작은 기여도 충분히 의미 있습니다.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 마무리
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+훈민정음은 과거의 유물이 아니라, 지금도 한국인의 생각과 삶을 담는 살아 있는 문자입니다.  
+이 프로젝트가 한글의 역사와 아름다움을 더 많은 사람에게 전하고,  
+한국인이라면 한 번쯤 마음이 뜨거워지는 공간이 되기를 바랍니다.
